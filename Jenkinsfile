@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage("Packaging/Push image") {
             steps {
-                withDockerRegistry(credentialsId:"dockerhub",url:"https://hub.docker.com/u/lebahoai3003"){
-                    sh 'docker build -t lebahoai3003/fastapiapp'
+                withDockerRegistry(credentialsId:"dockerhub",url:"https://index.docker.io/v1/"){
+                    sh 'docker build -t lebahoai3003/fastapiapp .'
                     sh 'docker push lebahoai3003/fastapiapp'
                 }
             }
