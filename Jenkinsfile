@@ -10,13 +10,13 @@ pipeline {
                 }
             }
         }
-        stage("Deploy") {
-            steps {
-                echo 'Deploy'
-                sh 'docker image pull lebahoai3003/fastapiapp'
-                sh 'docker stop hoailb-fastapi || echo "this container does not exist"'
-                sh 'docker run -d --name hoailb-fastapi -p 8989:8989 lebahoai3003/fastapiapp'
-            }
-        }
+        // stage("Deploy") {
+        //     steps {
+        //         echo 'Deploy'
+        //         sh 'docker image pull lebahoai3003/fastapiapp'
+        //         sh 'docker stop hoailb-fastapi || echo "this container does not exist"'
+        //         sh 'docker run -d --name hoailb-fastapi -p 8989:8989 lebahoai3003/fastapiapp'
+        //     }
+        // }
     }
 }
